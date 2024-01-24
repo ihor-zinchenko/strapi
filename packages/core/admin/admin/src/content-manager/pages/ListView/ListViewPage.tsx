@@ -57,7 +57,7 @@ import {
 } from '../../services/documents';
 import { buildValidParams } from '../../utils/api';
 import { FormattedLayouts, ListLayoutRow } from '../../utils/layouts';
-import { generatePermissionsObject } from '../../utils/permissions';
+// import { generatePermissionsObject } from '../../utils/permissions';
 import { getTranslation } from '../../utils/translations';
 import { getDisplayName } from '../../utils/users';
 
@@ -946,6 +946,8 @@ interface ProtectedListViewPageProps extends Omit<ListViewPageProps, 'slug'> {
 }
 
 const ProtectedListViewPage = ({ permissions, ...restProps }: ProtectedListViewPageProps) => {
+  return null;
+
   const { slug } = useParams<{ slug: string }>();
   const viewPermissions = React.useMemo(() => generatePermissionsObject(slug), [slug]);
 
